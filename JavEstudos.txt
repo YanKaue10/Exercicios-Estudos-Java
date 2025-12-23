@@ -1,0 +1,477 @@
+Estrutura de dados 
+
+Lista - 
+
+Fila - FIFO(firts in first out) primeiro que chegou é o primeiro a sair
+
+PILHA - LIFO(last in first out) o que chegou por último sai primeiro 
+
+ÁRVORE - 
+
+TABELAs
+
+
+
+Tipos Primitivos   1 byte = 8 bits
+
+1 - Byte = 1 bytes 
+2-  Short = 2 bytes 
+3 - int  = 4 bytes
+4 - Long = 8 bytes
+
+5 - Double = 4 btyes
+6 - float = 4 bytes 
+7 - Boolean = True or False 
+8 - char = único caractere entre aspas simples 
+
+
+.charAt(index); = indica qual a letra no índice que esta no parâmetro. 
+.concat(); == + ou seja, mesmo que adicionar algo. 
+.startsWith() = inicia com, se o valor for esperado, retorna TRUE se não retorna FALSE
+.length(); = tamanho da string 
+.endsWith(); = termina com... 
+
+
+Estrutura de controle 
+
+Expressão While();
+
+Ela executa um código enquanto a condição for true or false 
+int contador = 1; 
+while(contador <=10){
+	syso("i = ", contador); Enquanto contador for menor que 10
+	contador ++; vai ser acrescentado mais 1 até ficar maior ou igual a 10; 
+}
+
+	
+break(); para parar o laço infinito. 
+
+Expressão for(); 
+
+Estrutura planejada para ter uma quantidade determinada de expressões. Onde a primeira você inicializa a variável, a segunda é a expressão, onde vc determina se vai voltar TRUE or FALSE, e a ultima a manipulação da variável de controle para que esse for para de executar. 
+ 
+ 
+Nessa estrutura segue a mesma lógica do while, mas um pouco mais certeiro na quantidade que será determinada. 
+
+Ex: 
+
+for(int contador = 0; contador <=20; contador += 2);Enquanto o contador for menor ou igual a 20, ele vai adicionar de 2 em 2; 
+
+
+Desafio de while. Enquanto o usuário não digitar a palavra "Sair", ele vai continuar executando o while. 
+
+Scanner sc = new Scanner(System.in); 
+System.out.println("Digite..."); 
+String digite = ""; 
+ 
+while(!equals.equalsIgnoreCase("SAIR")){ Enquanto não for digitado o valor "Sair", ele continuara executando o while. 
+	System.out.println("Digite algo...");		
+	digite = sc.nextLine();	
+} 
+sc.close();
+
+
+Expressão DO/WHILE();
+ 
+Nessa expressão, no do{} vc tem um bloco de código onde não tem nenhuma expressão associada ao do, mas sim ao while, que está depois do do. E essa é a única estrutura de controle que termina com ;. 
+
+Mas porque ela é a unica expressão que termina com ";"? 
+
+O do/while é a única estrutura de repetição em Java que exige ponto e vírgula (;) após a condição, porque ela é a única em que a condição vem depois do bloco de código.
+
+
+Ex da estrutura:
+
+do{
+  //bloco de codigo
+} while(condição); 
+
+Scanner sc = new Scanner(System.in);
+String sair = "";
+do{ 
+   System.out.println("Você precisa da password para sair!");
+   sair = sc.nextLine(); 
+} while(!sair.equalsIgnoreCase("Palavra-magica"));
+	System.out.println("Acesso liberado. Você digitou a palavra mágica!");
+sc.close(); 
+ 
+
+
+Desafio do WHILE. 
+
+Crie um programa que:
+Peça ao usuário para digitar uma nota válida entre 0 e 10.
+
+Cada vez que uma nota válida for digitada, ela deve ser somada ao total acumulado.
+
+Também deve ser contada a quantidade de notas digitadas.
+
+Quando o usuário digitar -1, o programa deve encerrar o laço while.
+Ao final, o programa deve exibir:
+
+A soma total das notas.
+A quantidade de notas válidas digitadas. 
+A média das notas.
+
+
+Resolução do Problema. 
+Explicando a resolução do problema:
+
+Criei 3 variaveis, 1- para armazenar o total, inicializando com  0.0; 2- a quantidade de notas, para no final ser calculadas; 3- a variável nota, para armazenar as notas digitadas. 
+Inicializo com um scanner, para que o usuário digite as notas entre 0 e 10, e se caso ele queira sair ele digite -1. Logo após ele digitar as notas, ele entre no while, que vai ser true, enquanto (nota>0 && nota<10) enquanto nota for maior que 0 e menor ou igual a 10, ele vai executar o bloco de código que está dentro de um if. Onde (final += nota)ou seja, eu defini no inicio que a total começa com "0.0", sendo assim, ela  guarda a soma acumulada das notas digitadas. 
+A cada vez que o usuário digita uma nova nota válida, essa nota é adicionada ao valor atual da variável total. Essa atribuição de: final+=nota, é o mesmo que escrever total = total + nota; 
+E é adicionado mais uma na quantidadeNotas; Caso isso não aconteça, ele cai em um else, onde aparece mensagem informando que a nota digitada foi invalida. 
+No ultimo bloco de código, mais um if onde calculo a media, onde (quantidadeNotas>0) vai ser dividido o total pela quantidade de notas; tendo assim a media. 
+e no final apenas um print com as notas, quantidade de notas validas digitadas e a media exibida no console do usuário; 
+
+   
+
+Scanner sc = new Scanner(System.in); 
+
+double total= 0.0; 
+int quantidadeNotas = 0; 
+double nota;
+
+System.out.println(Digite notas entre 0 e 10 para ser computado. Caso queira sair
+, digite "-1"); 
+
+while(true){
+	System.out.println("Digite uma nota: ");
+	nota = sc.nextDOuble(); 
+	
+	if(nota ==-1){
+	System.out.println("Programa cancelado"); 
+break(); 
+}
+	if(nota>0 && nota<10){
+	total += nota; 
+	quantidadeNotas++; 
+}else {
+	System.out.println("Nota invalida, digite uma nota entre 0 e 10");
+}
+	if(quantidadeNotas > 0){
+double media = total/ quantidadeNotas; 
+
+	System.out.println("Total Notas" + notas);
+	System.out.println("Quantidade de notas: " + quantidadeNotas);
+	System.out.printf("Média: %.2f%n", media);
+}else {
+	System.out.println("Nenhuma nota válida foi digitada.");
+}
+} 
+
+
+Fazendo o codigo que uma maneira mais simplificada. 
+
+double nota = 0; 
+double total = 0; 
+int quantidadeNotas=0;
+
+while(nota != -1){Enquando a nota for diferente de -1, o código vai ser executado, se não, sai do bloco de codigo. 
+
+System.out.println("Informe a nota ou -1 para sair!"); 
+nota = sc.nextDouble(); 
+
+
+Foi adicionado esse if pois o -1 estava sendo considerado no double media, usando o if ele deixa de ser considerado.  
+if(nota >= 0 && nota <= 10){
+total += nota; Acrescentando mais uma nota a variável total, ou seja A cada vez que o usuário digita uma nova nota valida, essa nota é adicionada ao valor atual da variável total 
+quantidade ++; E incrementa a quantidade de notas; 
+
+
+}else if( nota != -1){
+System.out.println("Nota INvalida")
+}
+
+//calcular a media 
+double media = nota / quantidadeNotas; 
+System.out.println("A media é:" + media); 
+
+
+Criando um laço for decrescente, exercício para treinar o FOR;
+ 
+Defini dentro do for a variável contador onde inicia com valor de 10, e faço uma comparação, caso seja menor que 10, ele vai decrementar um valor, ou seja, de 10 até 1. 
+
+
+for(int contador = 10; contador < 0; contador --){
+   System.out.println(contador); 
+}
+
+ou se eu quiser decrementar de 2 em 2; 
+for(int contador = 10; contador>= 0; contador -=2){
+	System.out.printf("Contador = %d/n"); 
+}
+
+
+A definição da variável é importante nesse laço for, pois é importante saber que quando vc define uma veriavel dentro de um laço for, vc só poderá chamar ela novamente apenas dentro do laço, fora dela não é possível. 
+Mas se criar uma variavel fora do laço for é possível que você consiga chamar ela novamente ou criar uma nova variável com o mesmo nome;  
+
+Usando for dentro de outro for, for aninhado;
+
+Ex: 
+
+for(int i = 0; i < 10; i++){
+  for(int j = 0; i < 10; j++){
+   System.out.printf("[%d %d]", i, j);	 
+}
+}
+
+
+Exc de for: 
+Pedi ao gpt para que me mostrasse o caminho, e eu entendi; 
+
+Primeiro criou uma variável chamada valor onde recebe = "*"
+em seguida criou o laço for usando uma outra variável chamada controle, que inicia com * e em seguida usa o .length() para saber o comprimento da variável e assim adicionar um por um. Quando ele for maior que o valor definido, que é 5, ele para de executar o programa. 
+
+String valor = "*"; 
+for (String controle = "*"; controle.length() <= 5; controle += "#") {
+            System.out.println(valor);
+            valor += "#";
+        }
+
+
+Dessa outra forma atende aos requisitos do enunciado, onde não poderia usar números. 
+
+Defini a variável, em seguida comparei, se o v for diferente de 6 asteriscos, ele vai adicionar mais um astrrisco 
+for(String v = "*"; !v.equals("******"); v+="*") {
+			System.out.println(v);
+		}
+	}
+
+
+
+Break para de executar um código assim que o bloco que está em condição seja executado; 
+Nesse exemplo ele conta de 1 até 10, quando chega no 5 ele para a contagem e pula para o system out... FIM. 
+ex de break; 
+
+for(int i =0; i < 10; i++){
+	if(i ==5){
+	break; 
+}
+system.out.println("FIm"); 
+
+}
+
+Já no continue é diferente. Quando ele executa uma linha de código onde tem uma condição, ele para de executar e pula em seguida para a próxima condição. Ou seja, ele para de executar a linha de código que está em condição e pula para a próxima linha, continuando a executar o laço. 
+
+Ex a baixo: 
+
+for(int i =0; i <= 10; i++){
+   if(i==5) continue; ou seja, ele para no i = 5 e continua em seguida, 6,7,8...
+}
+
+
+
+Modulo 2 
+
+Classe e métodos 
+
+Classe vc Objetos -
+
+Classe - 
+Uma classe define um tipo de objeto, ou seja, representa a estrutura de dados: atributos, métodos, construtores...
+
+Exemplo de classe aluno: temos atributos nome, idade e curso. Além de métodos assistirAula(), fazerProva() e calcularNota(); 
+ 
+Os métodos são criados definindo seu tipo de retorno, no caso o tipo "void", que retorna vazio. 
+
+
+Objetos - 
+
+Um objeto é ums instancia criada a partir de uma determinada classe.
+
+A classe AlunoTeste representa o objeto, dentro dela é preciso chamar o método main. 
+
+Após instanciar o objeto é possível declarar valores aos atributos e chamar os métodos. 
+
+
+Atributos - 
+
+Os atributos são as características de um objeto, também podemos chamar de variáveis. 
+
+Exemplos de atributos: nome, idade, peso, altura...
+
+
+Construtores - 
+São métodos responsáveis pro criar os objetos instanciando a classe que foi definida; 
+
+
+
+
+
+Dentro do corpo da classe nos temos os atributos e comportamentos dessa classe. 
+
+Os atributos são dados e os comportamentos são métodos
+
+Por exemplo:
+Dados = int, boolean, string, date...
+
+Os métodos são os comportamentos dessa classe.
+
+Atributos e comportamentos são chamados de MEMBROS de uma classe. 
+
+Instância é sinônimo de objeto, ou seja, uma classe tem objeto A, objeto B e objeto C, pode ser também chamado de instancias da classe. 
+
+Construtor é um método especial que a partir de uma classe ele cria objetos. 
+
+Exemplo para fixar o que foi dito: 
+
+Primeiro a gente cria uma classe Produto com os seus atributos. 
+
+public class Produto{
+	String nome;
+	double preco;
+	double desconto;
+}
+
+em seguida criamos a classe main, onde terá o corpo do programa. 
+
+public static void main {
+	Criamos o construtor da classe, assim como tem o Scanner sc = new Scanner();. Nesse caso o novo construtor recebe o mesmo nome da classe Produto, para que consiga acessar a classe. 
+
+	Produto p1 = new Produto(); Instanciamos usando o new...
+	
+	Agora podemos acessar a classe e modificar...
+	
+	p1.nome = "Notebook";
+	p1.preco = 3400.00
+	p1.desconto = 0.25; 
+	
+	var p2 = new Produto(); Criamos essa variável para o construtor.  
+
+	p2.nome = "Celular";
+	p2.preco = 100.00;
+	p2.desconto = 0.29; 
+	
+	ao printar no console, será exibido o nome, preço e desconto aplicado ao produto. 
+
+}
+
+
+Métodos 
+Existem métodos que não recebem nada de entrada e que retorna algo, e tem outro tipo que recebe mas não retorna nada. 
+
+Ex: 
+	Se o método for retornar uma variável, é escrito na frente do método, para sinalizar que vai retornar e caso não retorne nada ele recebe void(de vazio)
+	nomeMetodo(){
+	
+
+}
+
+
+Mais sobre métodos...
+
+No exemplo do Produto, na classe ainda não tinha um método, mas em seguida criamos um chamado de precocomDesconto, onde não passamos nenhum parâmetro pois ele já tem as informações a cima,  mas retornamos um double que é o tipo e um return onde executamos o preco multiplicado pelo desconto - 1. 
+
+double precoComDesconto(){
+	return preco * (1 - desconto); 
+}
+
+Mas poderíamos adicionar um parâmetro ao método, passando um desconto extra...
+por exemplo. 
+
+double precoComDesconto(double descontoGerente){
+	return preco * (1 - desconto); 
+}
+
+e na classe main, alteraríamos o precoFInal nessa variável, passando entre os parênteses o desconto do gerente que será aplicado. Ex da linha de código abaixo 
+
+double precofinal1 = p1.precoComDesconto(0); 
+double precofinal2 = p2.precoComDesconto(0.1); 
+
+
+
+Construtor 
+
+O construtor padrão não recebe nenhum parâmetro. 
+Ex:
+
+Produto p1 = new Produto(); onde...
+classe           construtor 
+
+O que diferencia um método de um construtor é que no construtor ele não tem nenhum retorno 
+
+No primeiro construtor já foi passando o nome, preço e desconto;
+
+e no debaixo o construtor foi o padrão onde teve que setar o nome, preço e o desconto;
+
+
+Membro de Classe vc Instância; 
+
+
+Ex: 
+
+Criamos uma classe chamada Data, onde tem 3 atributos, dia, mês e ano. Quando você cria uma nova instancia da data, vc usa a palavra "New" junto com o construtor, você cria uma nova instancia onde será armazenado os valores.   
+
+
+Quando você coloca static em um atributo (ou método) de uma classe em Java, está dizendo:
+
+"Esse atributo não pertence a um objeto específico, e sim à própria classe."
+ 
+Ou seja, todos os objetos dessa classe compartilham o mesmo valor desse atributo.
+ 
+
+
+This e this(). 
+
+Em Java, a palavra-chave "this" é usada para se referir ao objeto atual da classe. Ela é usada para diferenciar variáveis de instância de variáveis locais com o mesmo nome, para invocar métodos da própria classe e para chamar construtores dentro de outros construtores da mesma classe. 
+
+Ex: 
+
+Acessando atributos:
+
+class Pessoa {
+    String nome;
+
+    public Pessoa(String nome) {
+        this.nome = nome; 
+// 'this.nome' refere-se ao atributo da classe, 'nome' refere-se ao parâmetro do método
+    }
+} 
+
+
+Chamando construtores:
+
+class Carro {
+    String marca;
+    String modelo;
+
+    public Carro() {
+        this("Desconhecida", "Desconhecido"); // Chama o construtor com dois argumentos
+    }
+
+    public Carro(String marca, String modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
