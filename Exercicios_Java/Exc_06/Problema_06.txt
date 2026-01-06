@@ -2,6 +2,8 @@ Faça um Programa que pergunte em que turno você estuda. Peça para digitar M-m
 Imprima a mensagem "Bom Dia!", "Boa Tarde!" ou "Boa Noite!" ou "Valor Inválido!", conforme o caso.
 
 
-Obs: Fiz 2 versões para que o usuário digite o inicio e o fim da sua aula. E no final mostra o turno do aluno. 
+Obs:O problema pedia uma coisa e eu fiz outra =). Mas ficou bom também. 
+
+ Fiz 2 versões para que o usuário digite o inicio e o fim da sua aula. E no final mostra o turno do aluno. 
 usando a versão mais simples de if e else. Mas como eu queria utilizar o LocalTIme, para ficar mais legal, pra não digitar um horário padrão, 
 coloquei para que digite uns quebrados. Ex Inicio 7:30 às 12:45. Ficou legal e gostei de praticar a lógica
