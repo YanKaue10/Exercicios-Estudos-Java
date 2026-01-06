@@ -10,11 +10,11 @@ public class Turno_M_V {
         System.out.println("Digite o horário de fim da sua aula: ");
         int fim = sc.nextInt();
 
-        if (inicio >= 5 && fim <= 12) {
+        if (inicio >= 7 && fim <= 12) {
             System.out.println("M - Matutino");
-        } else if (inicio >= 13 && fim <= 18) {
+        } else if (inicio >= 13 && fim <= 17) {
             System.out.println("V - Vespertino");
-        } else if (inicio >= 19 && fim <= 24) {
+        } else if (inicio >= 18 && fim <= 22) {
             System.out.println("N - Noturno");
         } else {
             System.out.println("Turno Inválido");
