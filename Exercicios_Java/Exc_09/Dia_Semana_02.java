@@ -15,7 +15,7 @@ public class Dia_Semana_02 {
             "Quarta-feira",
             "Quinta-feira",
             "Sexta-feira",
-            "Sábado"
+            "Sábado" 
         };
 
         if (dia != 0 && dia < 7) {
