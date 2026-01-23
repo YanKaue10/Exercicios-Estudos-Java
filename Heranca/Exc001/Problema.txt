@@ -1,0 +1,2 @@
+Implemente a classe Funcionario com nome, salario e os métodos
+addAumento(double valor), ganhoAnual() e exibeDados() - imprime os valores do funcionário.
